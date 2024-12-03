@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eBay $200 Gift Card Offer</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #222222;
+            color: #fff;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('background-image.jpg') no-repeat center center/cover;
+            filter: brightness(0.7);
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .claim-btn, .menu-btn {
+            font-size: 20px;
+            padding: 15px 30px;
+            background-color: #FF5722;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .claim-btn:hover, .menu-btn:hover {
+            transform: scale(1.1);
+            background-color: #ff8f4d;
+        }
+        .menu-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            padding: 10px 15px;
+            font-size: 30px;
+            color: white;
+        }
+        .offer-details {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transform: scale(1);
+            animation: fadeIn 1s ease-in-out;
+        }
+        .offer-image {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .countdown {
+            font-size: 30px;
+            font-weight: bold;
+            color: #FF5722;
+            margin-top: 20px;
+        }
+        .reviews {
+            margin-top: 30px;
+            font-style: italic;
+            color: #333;
+        }
+        .social-proof {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .social-proof span {
+            color: #FFD700;
+            font-weight: bold;
+        }
+        .bouncing {
+            animation: bounce 1s infinite;
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        .pulse {
+            animation: pulse 1.5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="menu-btn bouncing">
+            <button onclick="window.location.href='https://optilinklock.com/1765777'">☰</button>
+        </div>
+
+        <div class="offer-details pulse">
+            <h1 style="color: #FF5722;">Get Your eBay $200 Gift Card!</h1>
+            <!-- Add your image here -->
+            <img src="https://i.ibb.co/C7WFnzs/0db78628de48.webp" alt="eBay Gift Card" class="offer-image" />
+            <p>Hurry! Limited time offer. Claim your $200 gift card now and shop at eBay.</p>
+            <button class="claim-btn" onclick="window.location.href='https://optilinklock.com/1765777'">Claim Now</button>
+        </div>
+
+        <div class="countdown">Offer expires in: <span id="timer"></span></div>
+
+        <div class="social-proof">
+            <span>4578</span> people already claimed this offer!
+        </div>
+
+        <div class="reviews">
+            <p>"I got my gift card in no time, great offer!" - User A</p>
+            <p>"Thanks eBay for this awesome deal!" - User B</p>
+        </div>
+        
+        <div class="popup" id="popup">
+            <p>Hurry up! Time is running out!</p>
+        </div>
+    </div>
+
+    <script>
+        // Countdown timer
+        let countdownDate = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 hours from now
+        let timer = setInterval(function() {
+            let now = new Date().getTime();
+            let distance = countdownDate - now;
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("timer").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("timer").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+
+        // Popup notification
+        setTimeout(function() {
+            document.getElementById("popup").style.display = 'block';
+        }, 5000); // Show popup after 5 seconds
+    </script>
+</body>
+</html>
